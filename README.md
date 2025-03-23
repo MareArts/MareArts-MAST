@@ -2,7 +2,7 @@
 
 <div align="center">
   <img src="./ASSETS/logo.webp" alt="MAST Logo" width="250"/>
-  <p><i>High-performance real-time video stitching solution</i></p>
+  <p><i>High-performance real-time video/image stitching solution</i></p>
 </div>
 
 ## Overview
