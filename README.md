@@ -1,7 +1,7 @@
 # MareArts Realtime Stitching SDK (MAST) 🔄🖼️
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/username/repository/master/mast_logo.png" alt="MAST Logo" width="250"/>
+  <img src="./ASSETS/logo.webp" alt="MAST Logo" width="250"/>
   <p><i>High-performance real-time video stitching solution</i></p>
 </div>
 
@@ -17,6 +17,40 @@ MAST (MareArts Realtime Stitching) is a high-performance SDK for real-time image
 
 [![MAST YouTube Channel](https://img.shields.io/badge/YouTube-MAST_Examples-red?style=for-the-badge&logo=youtube)](https://youtube.com/playlist?list=PLvX6vpRszMkwNYWyr89I_Pe9FhdxsUeD8&si=4W9Upou4mmJuk5aj)
 [![MAST Subscription](https://img.shields.io/badge/Subscribe-MAST_SDK-blue?style=for-the-badge&logo=microsoftacademic)](https://study.marearts.com/p/marearts-realtime-stitching-sdk.html)
+
+## Demo Results
+
+<div align="center">
+  <h3>Example Input Images</h3>
+  <table>
+    <tr>
+      <td><img src="./ASSETS/S1.jpg" alt="S1" width="150"/></td>
+      <td><img src="./ASSETS/S2.jpg" alt="S2" width="150"/></td>
+      <td><img src="./ASSETS/S3.jpg" alt="S3" width="150"/></td>
+      <td><img src="./ASSETS/S4.jpg" alt="S4" width="150"/></td>
+      <td><img src="./ASSETS/S5.jpg" alt="S5" width="150"/></td>
+    </tr>
+    <tr>
+      <td align="center"><b>S1.jpg</b></td>
+      <td align="center"><b>S2.jpg</b></td>
+      <td align="center"><b>S3.jpg</b></td>
+      <td align="center"><b>S4.jpg</b></td>
+      <td align="center"><b>S5.jpg</b></td>
+    </tr>
+  </table>
+  
+  <h3>Stitching Results</h3>
+  <table>
+    <tr>
+      <td><img src="./ASSETS/cylindrical.jpg" alt="Cylindrical Projection Result" width="400"/></td>
+      <td><img src="./ASSETS/plane.jpg" alt="Planar Projection Result" width="400"/></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Cylindrical Projection</b></td>
+      <td align="center"><b>Planar Projection</b></td>
+    </tr>
+  </table>
+</div>
 
 ## System Requirements 💻
 
@@ -114,70 +148,82 @@ Adjust the file paths in the code to match your input sources.
 
 The SDK includes several test utilities to verify your environment is properly set up:
 
-### CUDA Verification (`b1_test_cuda.bat`, `b1_test_cuda.cu`)
-- Verifies that CUDA is properly installed and functioning
-- Performs a simple GPU calculation to test CUDA functionality
-- Reports the CUDA runtime version
+### 🔍 CUDA Verification
+**`b1_test_cuda`** (.bat/.sh)
+- ✓ Verifies that CUDA is properly installed and functioning
+- ✓ Performs a simple GPU calculation to test CUDA functionality
+- ✓ Reports the CUDA runtime version
 
-### OpenCV Basic Test (`b2_test_opencv.bat`, `b2_test_opencv.cpp`)
-- Tests basic OpenCV functionality
-- Loads, processes, and saves an image
-- Verifies OpenCV is properly installed and linked
+### 🔍 OpenCV Basic Test
+**`b2_test_opencv`** (.bat/.sh)
+- ✓ Tests basic OpenCV functionality
+- ✓ Loads, processes, and saves an image
+- ✓ Verifies OpenCV is properly installed and linked
 
-### OpenCV CUDA Integration Test (`b3_test_opencv_cuda.bat`, `b3_test_opencv_cuda.cpp`)
-- Tests the integration between OpenCV and CUDA
-- Verifies that GPU-accelerated OpenCV operations work correctly
-- Processes an image using the GPU
+### 🔍 OpenCV CUDA Integration Test
+**`b3_test_opencv_cuda`** (.bat/.sh)
+- ✓ Tests the integration between OpenCV and CUDA
+- ✓ Verifies that GPU-accelerated OpenCV operations work correctly
+- ✓ Processes an image using the GPU
 
-### MAST License Test (`T1_MAST_dll_load_test.bat`, `T1_MAST_dll_load_test.cpp`)
-- Verifies that the MAST DLL loads correctly
-- Tests license verification
-- Ensures your environment can run MAST applications
+### 🔍 MAST License Test
+**`T1_MAST_dll_load_test`** (.bat/.sh)
+- ✓ Verifies that the MAST library loads correctly
+- ✓ Tests license verification
+- ✓ Ensures your environment can run MAST applications
 
-### MAST Best Practices Test (`T2_bestpractice_test.bat`, `T2_bestpractice_test.cpp`)
-- Tests CUDA memory management techniques used in MAST
-- Verifies pinned memory allocation works correctly
-- Essential for high-performance GPU-based stitching
+### 🔍 MAST Best Practices Test
+**`T2_bestpractice_test`** (.bat/.sh)
+- ✓ Tests CUDA memory management techniques used in MAST
+- ✓ Verifies pinned memory allocation works correctly
+- ✓ Essential for high-performance GPU-based stitching
 
 ## Example Descriptions 📋
 
 The SDK includes several examples to demonstrate different use cases:
 
-### 1. Basic Calibration and Stitching (`1_MAST_calibration_N_stitching.cpp`)
-- Performs one-time calibration of input frames
-- Demonstrates real-time stitching after calibration
-- Shows basic SDK configuration
+### Example 1️⃣ - Basic Calibration and Stitching
+**`1_MAST_calibration_N_stitching.cpp`**
+- 🔹 Performs one-time calibration of input frames
+- 🔹 Demonstrates real-time stitching after calibration
+- 🔹 Shows basic SDK configuration
 
-### 2. Calibration and Parameter Saving (`2_MAST_calibration_N_saveParam.cpp`)
-- Performs calibration of input frames
-- Saves the calibration parameters to a file for later use
-- Useful for pre-calibrating camera setups
+### Example 2️⃣ - Calibration and Parameter Saving
+**`2_MAST_calibration_N_saveParam.cpp`**
+- 🔹 Performs calibration of input frames
+- 🔹 Saves the calibration parameters to a file for later use
+- 🔹 Useful for pre-calibrating camera setups
 
-### 3. Loading Parameters and Stitching (`3_MAST_loadParam_N_stitching.cpp`)
-- Loads previously saved calibration parameters
-- Performs real-time stitching using these parameters
-- Bypasses the need for recalibration
+### Example 3️⃣ - Loading Parameters and Stitching
+**`3_MAST_loadParam_N_stitching.cpp`**
+- 🔹 Loads previously saved calibration parameters
+- 🔹 Performs real-time stitching using these parameters
+- 🔹 Bypasses the need for recalibration
 
-### 4. Separate Class Instances (`4_MAST_Aclass_calibration_saveParam_N_loadParam_Bclass_stitching.cpp`)
-- Uses one MAST instance for calibration and another for stitching
-- Demonstrates parameter transfer between instances
-- Useful for systems with separate calibration and production workflows
+### Example 4️⃣ - Separate Class Instances
+**`4_MAST_Aclass_calibration_saveParam_N_loadParam_Bclass_stitching.cpp`**
+- 🔹 Uses one MAST instance for calibration and another for stitching
+- 🔹 Demonstrates parameter transfer between instances
+- 🔹 Useful for systems with separate calibration and production workflows
 
-### 5. Combined Workflow (`5_MAST_calibration_saveParam_N_loadParam_stitching.cpp`)
-- Shows a complete workflow in one example
-- Calibrates, saves parameters, loads parameters, and stitches
+### Example 5️⃣ - Combined Workflow
+**`5_MAST_calibration_saveParam_N_loadParam_stitching.cpp`**
+- 🔹 Shows a complete workflow in one example
+- 🔹 Calibrates, saves parameters, loads parameters, and stitches
 
-### 6. Advanced Thread-based GPU Stitching (`6_best_practice_video_thread_gpuOnly_MAST_calibration_N_stitching.cpp`)
-- Demonstrates multi-threaded video processing
-- Uses GPU for maximum performance
-- Implements best practices for real-time applications
-- Includes interactive calibration approval
+### Example 6️⃣ - Advanced Thread-based GPU Stitching
+**`6_best_practice_video_thread_gpuOnly_MAST_calibration_N_stitching.cpp`**
+- 🔹 Demonstrates multi-threaded video processing
+- 🔹 Uses GPU for maximum performance
+- 🔹 Implements best practices for real-time applications
+- 🔹 Includes interactive calibration approval
 
-### 7. Production-Ready Implementation (`7_best_practice_thread_gpuOnly_MAST_loadParam_N_stitching.cpp`)
-- Implements a production-ready stitching pipeline
-- Uses multi-threading for video capture and display
-- Loads pre-calibrated parameters for immediate stitching
-- Optimizes GPU memory transfer using pinned memory
+### Example 7️⃣ - Production-Ready Implementation
+**`7_best_practice_thread_gpuOnly_MAST_loadParam_N_stitching.cpp`**
+- 🔹 Implements a production-ready stitching pipeline
+- 🔹 Uses multi-threading for video capture and display
+- 🔹 Loads pre-calibrated parameters for immediate stitching
+- 🔹 Optimizes GPU memory transfer using pinned memory
 
 ## API Overview 💻
 
@@ -267,37 +313,35 @@ result_st_gpu.download(result_st);  // If CPU result is needed
 - **Performance Issues**: Check GPU usage and consider using the multi-threaded examples.
 - **Library Linking Errors**: Verify that the paths in the .bat/.sh files match your installation directories.
 
-## License
+## Resources 📚
 
-This SDK is licensed to you according to your purchase agreement. Please refer to your license for usage terms and restrictions.
+### 💲 SDK Subscription
+**[Get your MAST SDK subscription here!](https://study.marearts.com/p/marearts-realtime-stitching-sdk.html)**
 
-## Resources
+Access the full power of MAST SDK through our flexible subscription plans:
+- **Monthly License**: Ideal for short-term projects
+- **Annual License**: Perfect for ongoing development
+- **Lifetime License**: Best value for long-term use
 
-### Video Tutorials
+All subscriptions include:
+- Complete SDK with all features
+- Regular updates and improvements
+- Technical support
+- Documentation and examples
+
+### 🎬 Video Tutorials
 Visit our [YouTube Channel](https://youtube.com/playlist?list=PLvX6vpRszMkwNYWyr89I_Pe9FhdxsUeD8&si=4W9Upou4mmJuk5aj) for video tutorials and demonstrations of MAST in action.
 
-### Subscription
-Get your MAST SDK subscription [here](https://study.marearts.com/p/marearts-realtime-stitching-sdk.html).
+<!-- Insert a direct video thumbnail here - replace VIDEO_ID with an actual YouTube video ID from your channel -->
+[![MAST in Action](https://img.youtube.com/vi/VIDEO_ID/maxresdefault.jpg)](https://youtube.com/playlist?list=PLvX6vpRszMkwNYWyr89I_Pe9FhdxsUeD8&si=4W9Upou4mmJuk5aj)
 
-### Support
+### 📝 Blog
+Check out our [blog](https://study.marearts.com) for the latest news, tutorials, and updates on MAST.
+
+### 📞 Support
 For additional support, please contact:
-- Email: support@marearts.com
+- Email: hello@marearts.com
 - Website: https://marearts.com
-
-## Demo Results
-
-<div align="center">
-  <table>
-    <tr>
-      <td><img src="https://raw.githubusercontent.com/username/repository/master/demo_input.jpg" alt="Input Images" width="400"/></td>
-      <td><img src="https://raw.githubusercontent.com/username/repository/master/demo_result.jpg" alt="Stitched Result" width="400"/></td>
-    </tr>
-    <tr>
-      <td align="center"><b>Input Images</b></td>
-      <td align="center"><b>Stitched Result</b></td>
-    </tr>
-  </table>
-</div>
 
 ---
 
