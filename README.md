@@ -1,19 +1,24 @@
-# MareArts Realtime Stitching SDK (MAST)
+# MareArts Realtime Stitching SDK (MAST) 🔄🖼️
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/username/repository/master/mast_logo.png" alt="MAST Logo" width="250"/>
+  <p><i>High-performance real-time video stitching solution</i></p>
+</div>
 
 ## Overview
 
 MAST (MareArts Realtime Stitching) is a high-performance SDK for real-time image and video stitching. MAST leverages the power of both CPU and GPU acceleration to provide fast, high-quality panoramic stitching suitable for a variety of applications including:
 
-- Multi-camera panoramic video systems
-- Security and surveillance
-- Live event broadcasting
-- Virtual reality content creation
-- And more!
+- 📹 Multi-camera panoramic video systems
+- 🔍 Security and surveillance
+- 📺 Live event broadcasting
+- 🥽 Virtual reality content creation
+- ✨ And more!
 
 [![MAST YouTube Channel](https://img.shields.io/badge/YouTube-MAST_Examples-red?style=for-the-badge&logo=youtube)](https://youtube.com/playlist?list=PLvX6vpRszMkwNYWyr89I_Pe9FhdxsUeD8&si=4W9Upou4mmJuk5aj)
 [![MAST Subscription](https://img.shields.io/badge/Subscribe-MAST_SDK-blue?style=for-the-badge&logo=microsoftacademic)](https://study.marearts.com/p/marearts-realtime-stitching-sdk.html)
 
-## System Requirements
+## System Requirements 💻
 
 ### Windows
 - Windows 10 or later (64-bit)
@@ -30,7 +35,7 @@ MAST (MareArts Realtime Stitching) is a high-performance SDK for real-time image
 - OpenCV 4.1.0/4.1.1 with CUDA support
 - GCC/G++ 9.0 or later
 
-## Installation
+## Installation 🔧
 
 ### Windows
 1. Install OpenCV 4.8.1 with CUDA modules
@@ -45,7 +50,7 @@ MAST (MareArts Realtime Stitching) is a high-performance SDK for real-time image
 3. Update the paths in the .sh files to match your installation directories
 4. Create a 'params' directory in your working folder to store calibration parameters
 
-## SDK Structure
+## SDK Structure 📦
 
 The SDK includes:
 - Header files (`MareArtsStitcher.h`)
@@ -56,7 +61,7 @@ The SDK includes:
 
 ## Getting Started
 
-### 1. Serial Number Configuration
+### 1. Serial Number Configuration 🔑
 
 Before using the SDK, you need to set up your serial number and email in the `SN.h` file:
 
@@ -67,21 +72,22 @@ std::string MY_EMAIL = "your_email";
 
 Replace "your_serial_code" and "your_email" with the credentials provided to you.
 
-### 2. Verify Your Environment
+### 2. Verify Your Environment ✅
 
 Before using the SDK, it's recommended to verify your environment using the provided test utilities:
 
+**Windows (.bat)** / **Linux (.sh)**:
 ```
-b1_test_cuda.bat       # Tests CUDA functionality
-b2_test_opencv.bat     # Tests basic OpenCV functionality
-b3_test_opencv_cuda.bat # Tests OpenCV with CUDA integration
-T1_MAST_dll_load_test.bat # Tests MAST DLL loading and license verification
-T2_bestpractice_test.bat  # Tests CUDA memory management used in MAST
+b1_test_cuda             # 🧪 Tests CUDA functionality
+b2_test_opencv           # 🧪 Tests basic OpenCV functionality
+b3_test_opencv_cuda      # 🧪 Tests OpenCV with CUDA integration
+T1_MAST_dll_load_test    # 🧪 Tests MAST library loading and license verification
+T2_bestpractice_test     # 🧪 Tests CUDA memory management used in MAST
 ```
 
 If all tests run successfully, your environment is properly configured for MAST.
 
-### 3. Build and Run Examples
+### 3. Build and Run Examples 🚀
 
 For Windows, use the provided .bat files to build and run the examples:
 
@@ -95,7 +101,7 @@ For Linux, use the provided .sh files to build and run the examples:
 ./1_MAST_calibration_N_stitching.sh
 ```
 
-### 4. Asset Preparation
+### 4. Asset Preparation 🎬
 
 Place your input videos or camera inputs in the appropriate location. The examples are configured to use videos from an `../ASSETS/` directory, with files named:
 - `soccer_L1.mp4`
@@ -104,7 +110,7 @@ Place your input videos or camera inputs in the appropriate location. The exampl
 
 Adjust the file paths in the code to match your input sources.
 
-## Test Utilities
+## Test Utilities 🧪
 
 The SDK includes several test utilities to verify your environment is properly set up:
 
@@ -133,7 +139,7 @@ The SDK includes several test utilities to verify your environment is properly s
 - Verifies pinned memory allocation works correctly
 - Essential for high-performance GPU-based stitching
 
-## Example Descriptions
+## Example Descriptions 📋
 
 The SDK includes several examples to demonstrate different use cases:
 
@@ -173,7 +179,7 @@ The SDK includes several examples to demonstrate different use cases:
 - Loads pre-calibrated parameters for immediate stitching
 - Optimizes GPU memory transfer using pinned memory
 
-## API Overview
+## API Overview 💻
 
 ### Initialization
 
@@ -235,7 +241,7 @@ MAST.stitcher(frames_gpu, result_st_gpu);
 result_st_gpu.download(result_st);  // If CPU result is needed
 ```
 
-## Best Practices
+## Best Practices ⭐
 
 1. **Environment Setup**: Run the test utilities (b1, b2, b3, T1, T2) first to ensure your environment is properly configured.
 
@@ -253,13 +259,17 @@ result_st_gpu.download(result_st);  // If CPU result is needed
    
 7. **Progressive Implementation**: Start with the basic examples (1-3) to understand the workflow, then move to the more advanced examples (4-7).
 
-## Troubleshooting
+## Troubleshooting ⚠️
 
 - **Certification Error**: Verify your serial number and email in the SN.h file.
 - **Calibration Failure**: Try different frames or adjust the feature detection parameters.
 - **DLL Loading Error**: Ensure the PATH environment variable includes all necessary DLL directories.
 - **Performance Issues**: Check GPU usage and consider using the multi-threaded examples.
 - **Library Linking Errors**: Verify that the paths in the .bat/.sh files match your installation directories.
+
+## License
+
+This SDK is licensed to you according to your purchase agreement. Please refer to your license for usage terms and restrictions.
 
 ## Resources
 
@@ -271,8 +281,23 @@ Get your MAST SDK subscription [here](https://study.marearts.com/p/marearts-real
 
 ### Support
 For additional support, please contact:
-- Email: hello@marearts.com
+- Email: support@marearts.com
 - Website: https://marearts.com
+
+## Demo Results
+
+<div align="center">
+  <table>
+    <tr>
+      <td><img src="https://raw.githubusercontent.com/username/repository/master/demo_input.jpg" alt="Input Images" width="400"/></td>
+      <td><img src="https://raw.githubusercontent.com/username/repository/master/demo_result.jpg" alt="Stitched Result" width="400"/></td>
+    </tr>
+    <tr>
+      <td align="center"><b>Input Images</b></td>
+      <td align="center"><b>Stitched Result</b></td>
+    </tr>
+  </table>
+</div>
 
 ---
 
