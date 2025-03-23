@@ -1,0 +1,3 @@
+-arch=sm_89 
+-o b1_test_cuda.exe 
+b1_test_cuda.cu 
